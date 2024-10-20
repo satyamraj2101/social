@@ -1,0 +1,45 @@
+Folder PATH listing for volume Windows-SSD
+Volume serial number is 9841-2D5E
+C:.
+¦   index.js
+¦   package-lock.json
+¦   package.json
+¦   structure.txt
+¦
++---.idea
+¦       .gitignore
+¦       ai-social-controller.iml
+¦       dbnavigator.xml
+¦       git_toolbox_blame.xml
+¦       modules.xml
+¦       vcs.xml
+¦       workspace.xml
+¦
++---python
+¦       run.py
+¦       
++---src
+    ¦   .env
+    ¦   server.js
+    ¦   
+    +---config
+    ¦       config.js
+    ¦       db.js
+    ¦       
+    +---controllers
+    ¦       authController.js
+    ¦       profileController.js
+    ¦       
+    +---middlewares
+    ¦       authMiddleware.js
+    ¦       
+    +---models
+    ¦       User.js
+    ¦       
+    +---routes
+    ¦       authRoutes.js
+    ¦       profileRoutes.js
+    ¦       
+    +---utils
+            jwt.js
+            
