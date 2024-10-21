@@ -1,9 +1,19 @@
 // src/server.js
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
 const profileRoutes = require('./routes/profileRoutes'); // Add this line
+const friendRoutes = require('./routes/friendRoutes');
+const postsRoutes = require('./routes/postsRoutes');
+const commentRoutes = require('./routes/commentRoutes');
+const postRoutes = require('./routes/postsRoutes');
+const messageRoutes = require('./routes/messageRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
+const witRoutes = require('./routes/witRoutes');
 const { checkBlacklist } = require('./controllers/authController');
+const aiPostRoutes = require('./routes/aiPostRoutes');
+const aiMessageRoutes = require('./routes/aiMessageRoutes');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
@@ -27,6 +37,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Routes
 app.use('/auth', checkBlacklist, authRoutes);
 app.use('/profile', checkBlacklist, profileRoutes);
+app.use('/friends', checkBlacklist, friendRoutes);
+app.use('/posts', checkBlacklist, postsRoutes);
+app.use('/posts', postRoutes);
+app.use('/comments', commentRoutes);
+app.use('/messages', checkBlacklist, messageRoutes);
+app.use('/notifications', checkBlacklist, notificationRoutes);
+app.use('/ai/create', aiPostRoutes);
+app.use('/ai/message', checkBlacklist, aiMessageRoutes);
+
+app.use('/wit', witRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
